@@ -16,13 +16,23 @@ function buildGrid(gridSize, squareHeight) {
 
   for (let i = 0; i < gridSize; i++) {
     const squareDiv = document.createElement("div");
-    squareDiv.style.border = "1px solid #d3d3d3";
+    squareDiv.style.border = "1px solid #F5F5F5";
     squareDiv.style.height = `${squareHeight}px`;
     squareDiv.style.aspectRatio = "1";
     containerDiv.appendChild(squareDiv);
 
     squareDiv.addEventListener("mouseover", () => {
-      squareDiv.style.backgroundColor = "pink";
+      squareDiv.style.backgroundColor = generateRandomColour();
     })
   }
+}
+
+function generateRandomColour() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+
+  const randomColour = `rgb(${r}, ${g}, ${b})`;
+
+  return randomColour;
 }
