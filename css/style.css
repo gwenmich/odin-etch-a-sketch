@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  height: 500px;
+  width: 500px;
+
+  border: 2px dotted black;
+
+  margin: 50px;
+}
