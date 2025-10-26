@@ -3,7 +3,15 @@ const containerDiv = document.querySelector(".container");
 
 const chooseBtn = document.querySelector("button");
 chooseBtn.addEventListener("click", () => {
-  let side = Number(prompt("Choose how many squares per side (max 100): "));
+  let side;
+  while (true) {
+    side = Number(prompt("Choose how many squares per side (max 100): "));
+
+    if (!isNaN(side) && side > 0 && side <= 100) {
+      break;
+    }
+    alert("Invalid input! Please insert a number up to 100.")
+  }
   const gridSize = side ** 2;
   const squareHeight = (500 / side) - 2;
 
