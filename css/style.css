@@ -1,3 +1,11 @@
+body {
+  font-family: 'Verdana';
+}
+
+.heading {
+  text-align: center;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -8,5 +16,5 @@
 
   border: 2px dotted black;
 
-  margin: 50px;
+  margin: 50px auto auto auto;
 }

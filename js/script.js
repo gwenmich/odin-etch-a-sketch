@@ -1,11 +1,28 @@
 const containerDiv = document.querySelector(".container");
 
-squareHeight = (500 / Math.sqrt(16)) - 2;
 
-for (let i = 0; i < 16; i++) {
-  const squareDiv = document.createElement("div");
-  squareDiv.style.border = "1px solid black";
-  squareDiv.style.height = `${squareHeight}px`;
-  squareDiv.style.aspectRatio = "1";
-  containerDiv.appendChild(squareDiv);
+const chooseBtn = document.querySelector("button");
+chooseBtn.addEventListener("click", () => {
+  let side = Number(prompt("Choose how many squares per side (max 100): "));
+  const gridSize = side ** 2;
+  const squareHeight = (500 / side) - 2;
+
+  buildGrid(gridSize, squareHeight);
+
+});
+
+function buildGrid(gridSize, squareHeight) {
+  containerDiv.innerHTML = "";
+
+  for (let i = 0; i < gridSize; i++) {
+    const squareDiv = document.createElement("div");
+    squareDiv.style.border = "1px solid #d3d3d3";
+    squareDiv.style.height = `${squareHeight}px`;
+    squareDiv.style.aspectRatio = "1";
+    containerDiv.appendChild(squareDiv);
+
+    squareDiv.addEventListener("mouseover", () => {
+      squareDiv.style.backgroundColor = "pink";
+    })
+  }
 }
